@@ -53,7 +53,7 @@ public class EnemyPool : MonoBehaviour
     public void AddToPool(GameObject enemy)
     {
         enemy.SetActive(false);  // Deactivate the enemy
-        enemy.transform.position = new Vector3(0, -10, 0);  // Reset position
+        enemy.transform.position = new Vector3(0, -15, 0);  // Reset position
         Collider2D collider = enemy.GetComponent<Collider2D>();
         if (collider != null)
         {
