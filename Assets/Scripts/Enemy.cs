@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class Enemy : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class Enemy : MonoBehaviour
     public int health = 3;
     public GameObject explosionPrefab;
 
+    private HealthBarFade healthBarFade;
     private float bottomY = -5f; // Adjust based on your scene
     private Vector2 knockbackForce = new Vector2(1f, 0f); // Adjust knockback force
     private EnemyPool enemyPool;
@@ -21,6 +23,9 @@ public class Enemy : MonoBehaviour
         {
             originalColor = spriteRenderer.color;
         }
+
+        // find the health bar fade object
+        healthBarFade = FindObjectOfType<HealthBarFade>();
     }
 
     private void Update()
@@ -31,6 +36,10 @@ public class Enemy : MonoBehaviour
         // Return to pool if it reaches the bottom
         if (transform.position.y <= bottomY)
         {
+            if (healthBarFade != null)
+            {
+                healthBarFade.TakeDamage(5);
+            }
             ResetEnemy();
         }
 
@@ -68,6 +77,10 @@ public class Enemy : MonoBehaviour
         // If health is 0 or below, deactivate enemy and return to pool
         if (health <= 0)
         {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.IncreaseKillCount();
+            }
             Explode();
             ResetEnemy();
         }

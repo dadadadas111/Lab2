@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null && enemy.gameObject.activeInHierarchy)
             {
-                Debug.Log("Bullet hit enemy");
+                //Debug.Log("Bullet hit enemy");
                 Vector2 bulletDirection = (transform.position - collision.transform.position).normalized;
                 enemy.TakeDamage(damage, bulletDirection); // Apply damage and knockback
                 bulletPool.AddToPool(gameObject);

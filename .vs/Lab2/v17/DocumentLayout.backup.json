@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "E:\\Lab2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|e:\\lab2\\assets\\scripts\\healthbarfade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\healthbarfade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|e:\\lab2\\assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\spritebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spritebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|e:\\lab2\\assets\\scripts\\enemypool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\enemypool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemypool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\bulletpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bulletpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}|Assembly-CSharp.csproj|E:\\Lab2\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,32 +66,81 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EnemySpawner.cs",
-              "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\EnemySpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemySpawner.cs",
-              "ToolTip": "E:\\Lab2\\Assets\\Scripts\\EnemySpawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EnemySpawner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "HealthBarFade.cs",
+              "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\HealthBarFade.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HealthBarFade.cs",
+              "ToolTip": "E:\\Lab2\\Assets\\Scripts\\HealthBarFade.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HealthBarFade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T08:42:17.585Z"
+              "WhenOpened": "2025-02-18T09:14:11.694Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\Enemy.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
-              "ToolTip": "E:\\Lab2\\Assets\\Scripts\\Enemy.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Enemy.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAqwD8AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PauseMenu.cs",
+              "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\PauseMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PauseMenu.cs",
+              "ToolTip": "E:\\Lab2\\Assets\\Scripts\\PauseMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PauseMenu.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T08:40:37.079Z",
+              "WhenOpened": "2025-02-18T08:38:22.255Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "SpriteButton.cs",
+              "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\SpriteButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpriteButton.cs",
+              "ToolTip": "E:\\Lab2\\Assets\\Scripts\\SpriteButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpriteButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T08:26:44.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "E:\\Lab2\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T08:17:54.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EnemySpawner.cs",
+              "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\EnemySpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemySpawner.cs",
+              "ToolTip": "E:\\Lab2\\Assets\\Scripts\\EnemySpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemySpawner.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T08:42:17.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
+              "ToolTip": "E:\\Lab2\\Assets\\Scripts\\Enemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T08:40:37.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "EnemyPool.cs",
               "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\EnemyPool.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyPool.cs",
@@ -83,25 +148,23 @@
               "RelativeToolTip": "Assets\\Scripts\\EnemyPool.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAqwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T08:39:08.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T08:39:08.733Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Bullet.cs",
               "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
               "ToolTip": "E:\\Lab2\\Assets\\Scripts\\Bullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T08:25:42.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T08:25:42.775Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "BulletPool.cs",
               "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\BulletPool.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BulletPool.cs",
@@ -113,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "E:\\Lab2\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
