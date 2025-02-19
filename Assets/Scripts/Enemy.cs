@@ -43,10 +43,10 @@ public class Enemy : MonoBehaviour
             ResetEnemy();
         }
 
-        if (transform.position.x > 20 || transform.position.x < -20 || transform.position.y > 10 || transform.position.y < -10)
-        {
-            ResetEnemy();
-        }
+        //if (transform.position.x > 20 || transform.position.x < -20 || transform.position.y > 10 || transform.position.y < -10)
+        //{
+        //    ResetEnemy();
+        //}
     }
 
 
