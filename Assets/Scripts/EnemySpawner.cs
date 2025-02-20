@@ -12,19 +12,23 @@ public class EnemySpawner : MonoBehaviour
     public float startReducingAfter = 30f; // Time to wait before starting to reduce spawn rate
 
     private float currentSpawnRate;
+    private float currentSpeed = 2f;
     private float timer;
+    private bool isPaused = false;
 
     private void Start()
     {
         currentSpawnRate = initialSpawnRate;
         timer = 0f;
+        isPaused = false;
         StartCoroutine(SpawnLoop());
     }
 
     private IEnumerator SpawnLoop()
     {
-        while (true)
+        while (!isPaused)
         {
+            if (isPaused) yield break;
             SpawnEnemy();
             yield return new WaitForSeconds(currentSpawnRate);
 
@@ -36,12 +40,20 @@ public class EnemySpawner : MonoBehaviour
             {
                 currentSpawnRate -= spawnAcceleration;
             }
+
+            // Increase the speed of the enemies
+            if (timer >= startReducingAfter && currentSpeed < 3.3f)
+            {
+                currentSpeed += 0.1f;
+            }
         }
     }
 
     private void SpawnEnemy()
     {
+        if (isPaused) return;
         Vector3 spawnPosition = new Vector3(Random.Range(-spawnXRange, spawnXRange), spawnY, 0);
-        enemyPool.GetFromPool(spawnPosition);
+        var enemy = enemyPool.GetFromPool(spawnPosition);
+        enemy.GetComponent<Enemy>().speed = currentSpeed;
     }
 }

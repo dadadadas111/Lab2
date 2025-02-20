@@ -9,11 +9,13 @@ public class Enemy : MonoBehaviour
     public GameObject explosionPrefab;
 
     private HealthBarFade healthBarFade;
+    private GameManager gameManager;
     private float bottomY = -5f; // Adjust based on your scene
     private Vector2 knockbackForce = new Vector2(1f, 0f); // Adjust knockback force
     private EnemyPool enemyPool;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    private DropItemPool dropItemPool;
 
     private void Start()
     {
@@ -26,6 +28,12 @@ public class Enemy : MonoBehaviour
 
         // find the health bar fade object
         healthBarFade = FindObjectOfType<HealthBarFade>();
+
+        // find the game manager object
+        gameManager = FindObjectOfType<GameManager>();
+
+        // find the drop item pool object
+        dropItemPool = FindObjectOfType<DropItemPool>();
     }
 
     private void Update()
@@ -42,11 +50,6 @@ public class Enemy : MonoBehaviour
             }
             ResetEnemy();
         }
-
-        //if (transform.position.x > 20 || transform.position.x < -20 || transform.position.y > 10 || transform.position.y < -10)
-        //{
-        //    ResetEnemy();
-        //}
     }
 
 
@@ -82,6 +85,13 @@ public class Enemy : MonoBehaviour
                 GameManager.Instance.IncreaseKillCount();
             }
             Explode();
+
+            // random chance to drop item
+            if (Random.Range(0, 100) < 30)
+            {
+                DropItem();
+            }
+
             ResetEnemy();
         }
     }
@@ -101,7 +111,17 @@ public class Enemy : MonoBehaviour
         if (explosionPrefab != null)
         {
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            explosion.transform.SetParent(gameManager.transform);
             Destroy(explosion, 0.5f); // Destroy after 1 second
         }
     }
+
+    private void DropItem()
+    {
+        if (dropItemPool != null)
+        {
+            dropItemPool.GetDropItem(transform.position);
+        }
+    }
+
 }

@@ -18,6 +18,7 @@ public class BulletPool : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab);
+            bullet.transform.SetParent(transform);
             bullet.SetActive(false);
             bulletPool.Enqueue(bullet);
         }

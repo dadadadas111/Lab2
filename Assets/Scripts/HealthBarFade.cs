@@ -12,6 +12,9 @@ public class HealthBarFade : MonoBehaviour
     private Image damagedBarImage;
     private float damagedHealthFadeTimer;
     private HealthSystem healthSystem;
+    private GameMenu gameMenu;
+
+    private bool isGameOver = false;
 
     private void Awake()
     {
@@ -26,6 +29,7 @@ public class HealthBarFade : MonoBehaviour
         damagedBarImage.fillAmount = barImage.fillAmount;
         healthSystem.OnDamaged += HealthSystem_OnDamaged;
         healthSystem.OnHealed += HealthSystem_OnHealed;
+        gameMenu = GameObject.Find("GameManager").GetComponent<GameMenu>();
     }
 
     private void Update()
@@ -48,6 +52,12 @@ public class HealthBarFade : MonoBehaviour
                 float shrinkSpeed = 1f;
                 damagedBarImage.fillAmount -= shrinkSpeed * Time.deltaTime;
             }
+        }
+
+        if (healthSystem.GetHealthNormalized() == 0 && !isGameOver)
+        {
+            gameMenu.GameOver();
+            isGameOver = true;
         }
     }
 

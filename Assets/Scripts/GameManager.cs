@@ -23,4 +23,9 @@ public class GameManager : MonoBehaviour
         killCount = 0;
         killCountText.text = "Kills: " + killCount;
     }
+
+    public int GetKillCount()
+    {
+        return killCount;
+    }
 }

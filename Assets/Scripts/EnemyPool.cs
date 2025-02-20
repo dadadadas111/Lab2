@@ -19,6 +19,7 @@ public class EnemyPool : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject enemy = Instantiate(enemyPrefab);
+            enemy.transform.SetParent(transform);  // Set the pool as parent
             enemy.SetActive(false);  // Initially deactivate the enemy
             Collider2D collider = enemy.GetComponent<Collider2D>();
             if (collider != null)
