@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public TextMeshProUGUI killCountText;
+    public AudioSource AudioSource;
     private int killCount = 0;
 
     private void Awake()
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         killCount++;
         killCountText.text = "Kills: " + killCount;
+        if (AudioSource != null) AudioSource.Play();
     }
 
     public void ResetKillCount()

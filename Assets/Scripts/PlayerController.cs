@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public SpriteRenderer gunRenderer;
     public BuffLoader buffLoader;
+    public AudioSource shootSound;
 
     private Vector3 originalGunPosition;
     private HealthBarFade healthBarFade;
@@ -76,6 +77,12 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
+
+        if (shootSound != null)
+        {
+            shootSound.Play();
+        }
+
         if (muzzleFlash != null)
         {
             muzzleFlash.Play();

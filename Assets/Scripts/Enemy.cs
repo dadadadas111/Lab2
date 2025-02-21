@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float speed = 2f;
     public int health = 3;
     public GameObject explosionPrefab;
+    public AudioSource deathSound;
 
     private HealthBarFade healthBarFade;
     private GameManager gameManager;
@@ -80,6 +81,11 @@ public class Enemy : MonoBehaviour
         // If health is 0 or below, deactivate enemy and return to pool
         if (health <= 0)
         {
+            if (deathSound != null)
+            {
+                deathSound.Play();
+                Debug.Log("Death Sound Played");
+            }
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.IncreaseKillCount();
