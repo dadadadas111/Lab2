@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
         GameObject bullet = bulletPool.GetFromPool();
         bullet.transform.position = muzzlePoint.position;
         bullet.transform.rotation = muzzlePoint.rotation;
-        bullet.GetComponent<Rigidbody2D>().velocity = muzzlePoint.right * 10f;
+        bullet.GetComponent<Rigidbody2D>().velocity = muzzlePoint.right * 15f;
 
         StartCoroutine(ApplyRecoil());
     }

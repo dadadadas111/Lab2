@@ -17,9 +17,13 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private DropItemPool dropItemPool;
+    private float horizontalRange = 2f; // How far left and right they can move
+    private float horizontalSpeed = 1f; // Speed of horizontal movement
+    private float randomOffset; // Unique offset for each enemy
 
     private void Start()
     {
+        randomOffset = Random.Range(0f, 100f);
         enemyPool = FindObjectOfType<EnemyPool>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
@@ -39,8 +43,12 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        // Move enemy downward
-        transform.position += Vector3.down * speed * Time.deltaTime;
+        // Calculate horizontal movement using Perlin Noise or sine wave
+        float horizontalMovement = Mathf.Sin((Time.time + randomOffset) * horizontalSpeed) * horizontalRange;
+
+        // Move enemy downward with horizontal movement
+        transform.position += new Vector3(horizontalMovement * Time.deltaTime, -speed * Time.deltaTime, 0);
+
 
         // Return to pool if it reaches the bottom
         if (transform.position.y <= bottomY)

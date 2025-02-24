@@ -12,6 +12,7 @@ public class DropItemPool : MonoBehaviour
         for (int i = 0; i < poolSize; i++)
         {
             GameObject item = Instantiate(dropItemPrefab);
+            item.transform.SetParent(transform);
             item.SetActive(false);
             pool.Enqueue(item);
         }
