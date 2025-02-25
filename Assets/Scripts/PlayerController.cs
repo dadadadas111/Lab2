@@ -57,6 +57,18 @@ public class PlayerController : MonoBehaviour
         Vector3 move = new Vector3(moveInput, 0, 0) * moveSpeed * Time.deltaTime;
         transform.position += move;
 
+        // rotate sprite based on movement direction
+        if (moveInput > 0)
+        {
+            spriteRenderer.flipX = false;
+            gunRenderer.flipY = false;
+        }
+        else if (moveInput < 0)
+        {
+            spriteRenderer.flipX = true;
+            gunRenderer.flipY = true;
+        }
+
         // Clamp within boundaries
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, -moveBoundary, moveBoundary),

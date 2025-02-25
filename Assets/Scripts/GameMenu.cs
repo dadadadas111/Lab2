@@ -29,6 +29,8 @@ public class GameMenu : MonoBehaviour
     {
         isPaused = true;
         pauseMenuUI.SetActive(true);
+        // set pauseMenuUI to be the on top of other canvas UI
+        pauseMenuUI.transform.SetAsLastSibling();
         Time.timeScale = 0f; // Pause game
     }
 
@@ -50,10 +52,13 @@ public class GameMenu : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.SetActive(true);
+        // set gameOverUI to be the on top of other canvas UI
+        gameOverUI.transform.SetAsLastSibling();
         // update the text in the game over screen
         int killCount = gameManager.GetKillCount();
         var gameOverText = gameOverUI.transform.Find("GameOverText").GetComponent<TMPro.TextMeshProUGUI>();
-        if (killCount > 0) {
+        if (killCount > 0)
+        {
             gameOverText.text = "Game Over! You killed " + killCount + " enemies!";
         }
         else

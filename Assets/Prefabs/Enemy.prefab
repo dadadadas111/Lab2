@@ -173,10 +173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec606d765ca2e7e439d115335adc4cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
   health: 3
   explosionPrefab: {fileID: 3431650912268585612, guid: a79439caceb686b42b3a3215df2064fc, type: 3}
   deathSound: {fileID: 538402219362824459}
+  hpBarPrefab: {fileID: 386417235504063768, guid: 4efca717038d4a2469c41cd8436c9e0b, type: 3}
 --- !u!95 &4390530315125685162
 Animator:
   serializedVersion: 5

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using Unity.VisualScripting;
+using UnityEngine.UI;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,22 +9,25 @@ public class Enemy : MonoBehaviour
     public int health = 3;
     public GameObject explosionPrefab;
     public AudioSource deathSound;
+    public GameObject hpBarPrefab;
 
+    private GameObject hpBarInstance;
+    private Image hpFillImage;
     private HealthBarFade healthBarFade;
     private GameManager gameManager;
-    private float bottomY = -5f; // Adjust based on your scene
-    private Vector2 knockbackForce = new Vector2(1f, 0f); // Adjust knockback force
+    private float bottomY = -5f;
+    private Vector2 knockbackForce = new Vector2(1f, 0f);
     private EnemyPool enemyPool;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private DropItemPool dropItemPool;
-    private float horizontalRange = 2f; // How far left and right they can move
-    private float horizontalSpeed = 1f; // Speed of horizontal movement
-    private float randomOffset; // Unique offset for each enemy
+    private float horizontalRange = 2f;
+    private float horizontalSpeed = 1f;
+    private float randomOffset;
 
     private void Start()
     {
-        randomOffset = Random.Range(0f, 100f);
+        randomOffset = UnityEngine.Random.Range(0f, 100f);
         enemyPool = FindObjectOfType<EnemyPool>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
@@ -31,26 +35,47 @@ public class Enemy : MonoBehaviour
             originalColor = spriteRenderer.color;
         }
 
-        // find the health bar fade object
+        if (hpBarPrefab != null)
+        {
+            hpBarInstance = Instantiate(hpBarPrefab, transform);
+            hpBarInstance.transform.SetParent(GameObject.Find("Canvas").transform);
+            hpBarInstance.transform.SetAsFirstSibling();
+            hpBarInstance.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            hpFillImage = hpBarInstance.transform.Find("Bar").GetComponent<Image>();
+            hpBarInstance.transform.localPosition = new Vector3(0, 0.6f, 0);
+            hpBarInstance.SetActive(false);
+        }
+
         healthBarFade = FindObjectOfType<HealthBarFade>();
-
-        // find the game manager object
         gameManager = FindObjectOfType<GameManager>();
-
-        // find the drop item pool object
         dropItemPool = FindObjectOfType<DropItemPool>();
     }
 
     private void Update()
     {
-        // Calculate horizontal movement using Perlin Noise or sine wave
         float horizontalMovement = Mathf.Sin((Time.time + randomOffset) * horizontalSpeed) * horizontalRange;
-
-        // Move enemy downward with horizontal movement
         transform.position += new Vector3(horizontalMovement * Time.deltaTime, -speed * Time.deltaTime, 0);
+        // Clamp within boundaries
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, -8f, 8f),
+            transform.position.y,
+            transform.position.z
+        );
 
+        // check to flip sprite based on horizontal movement
+        if (horizontalMovement < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (horizontalMovement > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
 
-        // Return to pool if it reaches the bottom
+        if (hpBarInstance != null)
+        {
+            hpBarInstance.transform.position = transform.position + new Vector3(0, 0.5f, 0);
+        }
         if (transform.position.y <= bottomY)
         {
             if (healthBarFade != null)
@@ -65,16 +90,14 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage, Vector2 bulletDirection)
     {
         health -= damage;
+        UpdateHealthBar();
         StartCoroutine(FlashRed());
-
-        // Apply knockback force
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(bulletDirection * knockbackForce, ForceMode2D.Impulse);
         }
-
     }
 
     private IEnumerator FlashRed()
@@ -82,11 +105,9 @@ public class Enemy : MonoBehaviour
         if (spriteRenderer != null)
         {
             spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(0.2f); // Adjust flash duration
+            yield return new WaitForSeconds(0.2f);
             spriteRenderer.color = originalColor;
         }
-
-        // If health is 0 or below, deactivate enemy and return to pool
         if (health <= 0)
         {
             if (deathSound != null)
@@ -99,9 +120,7 @@ public class Enemy : MonoBehaviour
                 GameManager.Instance.IncreaseKillCount();
             }
             Explode();
-
-            // random chance to drop item
-            if (Random.Range(0, 100) < 30)
+            if (UnityEngine.Random.Range(0, 100) < 50)
             {
                 DropItem();
             }
@@ -112,7 +131,8 @@ public class Enemy : MonoBehaviour
 
     private void ResetEnemy()
     {
-        health = 3; // Reset health
+        health = 3;
+        UpdateHealthBar();
         if (spriteRenderer != null)
         {
             spriteRenderer.color = originalColor;
@@ -126,7 +146,7 @@ public class Enemy : MonoBehaviour
         {
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             explosion.transform.SetParent(gameManager.transform);
-            Destroy(explosion, 0.5f); // Destroy after 1 second
+            Destroy(explosion, 0.5f);
         }
     }
 
@@ -135,6 +155,29 @@ public class Enemy : MonoBehaviour
         if (dropItemPool != null)
         {
             dropItemPool.GetDropItem(transform.position);
+        }
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (health == 3)
+        {
+            if (hpBarInstance != null)
+            {
+                hpBarInstance.SetActive(false);
+            }
+        }
+        else
+        {
+            if (hpBarInstance != null)
+            {
+                hpBarInstance.SetActive(true);
+            }
+        }
+
+        if (hpFillImage != null)
+        {
+            hpFillImage.fillAmount = (float)health / 3;
         }
     }
 

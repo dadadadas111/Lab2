@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
             }
 
             // Increase the speed of the enemies
-            if (timer >= startReducingAfter && currentSpeed < 3.3f)
+            if (timer >= startReducingAfter && currentSpeed < 2.3f)
             {
                 currentSpeed += 0.1f;
             }
