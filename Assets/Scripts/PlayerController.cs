@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         RotateGunToMouse();
 
-        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+        if (Input.GetMouseButton(0) && Time.timeScale != 0 && Time.time >= nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;

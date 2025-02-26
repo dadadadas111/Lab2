@@ -76,7 +76,6 @@ public class GameMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Time.timeScale = 1f;
-        // SceneManager.LoadScene("MainMenu"); // Placeholder
-        Debug.Log("Return to Main Menu (not implemented yet)");
+        SceneManager.LoadScene("MainMenu");
     }
 }
