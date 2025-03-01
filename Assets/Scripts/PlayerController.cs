@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
             nextFireTime = Time.time + fireRate;
         }
 
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
             if (muzzleFlash != null)
             {
@@ -89,7 +89,11 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-
+        if (bulletPool == null)
+        {
+            // Debug.LogWarning("Bullet Pool is null!");
+            return;
+        }
         if (shootSound != null)
         {
             shootSound.Play();

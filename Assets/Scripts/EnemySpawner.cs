@@ -5,7 +5,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public EnemyPool enemyPool;
     public float initialSpawnRate = 1.5f;
-    public float minSpawnRate = 0.5f; // The fastest it can get
+    public float minSpawnRate = 0.2f; // The fastest it can get
+    public float maxSpeed = 5f;
     public float spawnAcceleration = 0.1f; // How much to decrease per step
     public float spawnXRange = 8f;
     public float spawnY = 6f;
@@ -42,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
             }
 
             // Increase the speed of the enemies
-            if (timer >= startReducingAfter && currentSpeed < 2.3f)
+            if (timer >= startReducingAfter && currentSpeed < maxSpeed)
             {
                 currentSpeed += 0.1f;
             }
