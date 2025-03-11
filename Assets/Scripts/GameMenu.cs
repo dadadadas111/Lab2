@@ -51,21 +51,22 @@ public class GameMenu : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverUI.SetActive(true);
-        // set gameOverUI to be the on top of other canvas UI
-        gameOverUI.transform.SetAsLastSibling();
-        // update the text in the game over screen
-        int killCount = gameManager.GetKillCount();
-        var gameOverText = gameOverUI.transform.Find("GameOverText").GetComponent<TMPro.TextMeshProUGUI>();
-        if (killCount > 0)
-        {
-            gameOverText.text = "Game Over! You killed " + killCount + " enemies!";
-        }
-        else
-        {
-            gameOverText.text = "Game Over! You didn't kill any enemies!";
-        }
-        Time.timeScale = 0f;
+        SceneManager.LoadScene("EndScene");
+        // gameOverUI.SetActive(true);
+        // // set gameOverUI to be the on top of other canvas UI
+        // gameOverUI.transform.SetAsLastSibling();
+        // // update the text in the game over screen
+        // int killCount = gameManager.GetKillCount();
+        // var gameOverText = gameOverUI.transform.Find("GameOverText").GetComponent<TMPro.TextMeshProUGUI>();
+        // if (killCount > 0)
+        // {
+        //     gameOverText.text = "Game Over! You killed " + killCount + " enemies!";
+        // }
+        // else
+        // {
+        //     gameOverText.text = "Game Over! You didn't kill any enemies!";
+        // }
+        // Time.timeScale = 0f;
     }
 
     public void QuitGame()
